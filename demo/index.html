@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Demo page</title>
+
+	<script src="http://localhost:35729/livereload.js"></script>
+
+	<script src="../node_modules/systemjs/dist/system.src.js"></script>
+	<script src="../system.config.js"></script>
+	<script>
+		System['import']('../src/index.js')
+			.then(function(cloudClipboard){
+				window.cloudClipboard = cloudClipboard
+			})
+			['catch'](function(err){
+				console.error(err)
+			})
+	</script>
+</head>
+<body>
+	<div class="panel-body key-panel">
+              <i class="pn-icon-arrow-o-right pull-right" style="color:#2bcd99;font-size:36px"></i>
+              <span class="btn-oval tier pull-right ng-binding" id="allMessages">Free</span>
+              <i ng-show="Role.isSharedKey(k.id)" class="pn-icon-group pn-26 pull-right ng-hide" style="color:#d9d9d9;margin-right:20px;margin-top:5px" title="This keyset is shared with other users"></i>
+              <h3 class="pull-left ng-binding">public</h3>
+              <div class="row" style="clear:both">
+                <!-- ngIf: User.isAdminUser() && !k.status -->
+              </div>
+              <div class="uppercase line-strike small-title" style="font-family:ProximaNova-Semibold">
+                <span>Publish Key</span>
+              </div>
+              <br>
+              <textarea class="nowrap ng-binding">sub-c-e463d758-8b05-11e6-a68c-0619f8945a4f</textarea>
+              <div class="uppercase line-strike small-title" style="font-family:ProximaNova-Semibold">
+                <span>Subscribe Key</span>
+              </div>
+              <br>
+              <textarea class="nowrap ng-binding"></textarea>
+              <br>
+              <br>
+              <div style="width:44%;display:inline-block;float:left">
+                <p class="ng-binding">0 Messages</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-darkgrey" style="width:0%"></div>
+                </div>
+              </div>
+              <div style="width:44%;margin-left:12%;display:inline-block;float:left">
+                <p class="ng-binding">0 Devices</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-darkgrey" style="width:0%"></div>
+                </div>
+              </div>
+            </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Library to syncronize a Copy-Paste across devices
